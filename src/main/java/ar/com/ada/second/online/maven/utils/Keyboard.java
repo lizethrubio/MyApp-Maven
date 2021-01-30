@@ -41,15 +41,20 @@ public class Keyboard {
         Scanner keyboard = getInstance();
         boolean aux = true;
         String txt = null;
-        while(aux){
-            System.out.println("?");
-            txt = keyboard.nextLine().trim();
-            //trim limpia espacios en blanco de una cadena
-            while (!txt.isEmpty() && !txt.matches("^[A-Za-zåé\\s]+$")){
-                invalidData();
+        while(aux) {
+            try {
+                System.out.println("?");
                 txt = keyboard.nextLine().trim();
+                //trim limpia espacios en blanco de una cadena
+                while (!txt.isEmpty() && !txt.matches("^[A-Za-zåé\\s]+$")) {
+                    invalidData();
+                    txt = keyboard.nextLine().trim();
+                }
+                aux = false;
+            }catch (InputMismatchException e    ){
+                invalidData();
+                keyboard.next();
             }
-            aux=false;
         }
         return txt;
     }
@@ -59,16 +64,24 @@ public class Keyboard {
         Scanner keyboard = getInstance();
         boolean aux = true;
         String txt = null;
-        while(aux){
-            System.out.println("?");
-            txt = keyboard.nextLine().trim();
-            //trim limpia espacios en blanco de una cadena
-            while (!txt.isEmpty() && !txt.matches("^[0-9]+$")){
-                invalidData();
+        while(aux) {
+            try {
+                System.out.println("?");
                 txt = keyboard.nextLine().trim();
+                //trim limpia espacios en blanco de una cadena
+                while (!txt.isEmpty() && !txt.matches("^[0-9]+$")) {
+                    invalidData();
+                    txt = keyboard.nextLine().trim();
+                }
+                aux = false;
+            }catch (InputMismatchException e    ){
+                invalidData();
+                keyboard.next();
             }
-            aux=false;
         }
+
+
+
         //"123" --> 123
         return Integer.parseInt(txt);
     }
@@ -89,7 +102,7 @@ public class Keyboard {
                     txt = keyboard.nextLine().trim();
                 }
                 aux = false;
-            }catch (InputMismatchException e){
+            }catch (InputMismatchException e    ){
                 invalidData();
                 keyboard.next();
             }
