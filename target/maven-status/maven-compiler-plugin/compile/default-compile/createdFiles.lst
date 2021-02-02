@@ -1,1 +1,5 @@
+ar/com/ada/second/online/maven/controller/UserController.class
+ar/com/ada/second/online/maven/model/dto/UserDTO.class
 ar/com/ada/second/online/maven/App.class
+ar/com/ada/second/online/maven/model/dao/UserDAO.class
+ar/com/ada/second/online/maven/view/UserView.class
