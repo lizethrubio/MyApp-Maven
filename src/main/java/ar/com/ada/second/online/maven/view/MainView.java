@@ -40,7 +40,7 @@ public class MainView {
         System.out.println("Select the module that you want to work: ");
         System.out.println("| 1 | Users ");
         System.out.println("| 5 | End App ");
-        return Keyboard.getInputIntiger();
+        return Keyboard.getInputInteger();
     }
 
 }

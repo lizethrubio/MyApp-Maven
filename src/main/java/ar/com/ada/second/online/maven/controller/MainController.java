@@ -6,14 +6,13 @@ import sun.applet.Main;
 public class MainController {
     private static MainController mainController;
     private MainView  mainView = MainView.getInstance();
+    private UserController userController = UserController. getInstance();
 
     private MainController(){
     }
 
     public static MainController getInstance(){
-        if (mainController==null){
-            mainController = new MainController();
-        }
+        if (mainController==null) mainController = new MainController();
         return mainController;
     }
 
@@ -24,7 +23,7 @@ public class MainController {
             Integer option = mainView.mainMenuSelectOption();
             switch (option) {
                 case 1:
-                    //Call the user controller
+                    userController.init();
                     System.out.println("User Controller\n");
                     break;
                 case 5:

@@ -46,7 +46,7 @@ public class Keyboard {
                 System.out.println("?");
                 txt = keyboard.nextLine().trim();
                 //trim limpia espacios en blanco de una cadena
-                while (!txt.isEmpty() && !txt.matches("^[A-Za-zåé\\s]+$")) {
+                while (!txt.isEmpty() && !txt.matches("^[A-Za-zåé@íú\\.\\s]+$")) {
                     invalidData();
                     txt = keyboard.nextLine().trim();
                 }
@@ -60,7 +60,7 @@ public class Keyboard {
     }
 
     //getInput Integer
-    public static Integer getInputIntiger(){
+    public static Integer getInputInteger(){
         Scanner keyboard = getInstance();
         boolean aux = true;
         String txt = null;
